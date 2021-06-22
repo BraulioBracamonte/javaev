@@ -35,7 +35,7 @@
             </div>
             <div class="form-group" >
               <label>Contraseña:</label>
-              <input type="text" class="form-control" id="passl" name="pass" required />
+              <input type="password" class="form-control" id="passl" name="pass" required />
             </div>
             <div class="form-group" >
               <label>&nbsp;</label>
@@ -52,11 +52,16 @@
             </div>
             <div class="form-group">
               <label>Edad:</label>
-              <input type="text" id="age" name="age" class="form-control" required />
+              <input type="number" min="16" id="age" name="age" class="form-control" required />
             </div>
             <div class="form-group">
-              <label>Sexo:</label>
-              <input type="text" id="gender" name="gender" class="form-control" required />
+              <label>Género:</label>
+              <select id="gender" name="gender" class="form-control" required >
+                <option value="">Seleccionar</option>
+                <option value="Hombre" >Hombre</option>
+                <option value="Mujer" >Mujer</option>
+              </select>
+              <!--input type="text" id="gender" name="gender" class="form-control" required /-->
             </div>
             <!--div class="form-group">
               <label>Altura (centímetros):</label>
@@ -72,7 +77,7 @@
             </div>
             <div class="form-group">
               <label>Contraseña:</label>
-              <input type="text" id="pass" name="pass" class="form-control" required/>
+              <input type="password" id="pass" name="pass" class="form-control" required/>
             </div>
             <div class="form-group">
               <label>&nbsp;</label>

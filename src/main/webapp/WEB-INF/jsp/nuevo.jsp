@@ -31,6 +31,7 @@
               <tr><th>Edad:</th><td>${usuario.age}</td></tr>
               <tr><th>Género:</th><td>${usuario.gender}</td></tr>
             </table>
+            <a href="/"><button class="btn btn-danger" >Cerrar sesión</button></a>
           </div>
           <div class="col-lg-6">
             <h3>Historial IMC</h3>
@@ -39,13 +40,13 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Altura en centímetros</span>
                 </div>
-                <input type="text" class="form-control" id="height" />
+                <input type="number" min="100" max="250" step="1" class="form-control" id="height" />
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Peso en Kilogramos</span>
                 </div>
-                <input type="text" class="form-control" id="weight" />
+                <input type="number" step="1" class="form-control" id="weight" />
               </div>
               <input type="date" id="date" required="required" class="" />
               <button type="button" onclick="saveimc()" class="btn btn-primary">Calcular</button>
@@ -84,6 +85,7 @@
             </script>
           </div>
         </div>
+        <br/>
         <div class="row">
           <div class="col-sm-12">
             <table class="table table-striped table-bordered table-condensed" width='100%' id="table1"></table>
@@ -92,19 +94,19 @@
               $(document).ready(function() {
                 table1 = $('#table1').DataTable( {
                   ajax:{
-                    url: "/imcs/",
+                    url: "/imcsf/${usuario.id}",
                     dataSrc: ""
                   }//*/
                   //data:""
                   //,colReorder:true
                   //,responsive: true
                   //,select:{blurable:true, style:'os' }
-                  ,dom:
+                  /*,dom:
                     "<'row'<'col-sm-8' B><'col-sm-4'l>>" +
                     //"<'row'<'col-lg' B > >"+
                     "<'row'<'col-md-3'i><'col-md-9'p>>"+
                     "<'row'<'col-lg'tr>>" +
-                    "<'row'<'col-md-3'i><'col-md-9'p>>"
+                    "<'row'<'col-md-3'i><'col-md-9'p>>"//*/
                   ,"drawCallback": function(settings){
                     //dtafterdraw(table1);
                   }//FIN DE DRAW CALL BACK
@@ -124,11 +126,6 @@
           </div>
         </div>
       </div>
-      <%
-          HttpSession sess = request.getSession(false);
-          out.print(sess.getAttribute("isloged") );
-        %>
-      Atts = ${atts}
-      ->${usuario.pass}
+      
     </body>
   </html>
