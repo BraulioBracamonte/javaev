@@ -58,14 +58,14 @@
               <label>Sexo:</label>
               <input type="text" id="gender" name="gender" class="form-control" required />
             </div>
-            <div class="form-group">
+            <!--div class="form-group">
               <label>Altura (centímetros):</label>
               <input type="text" id="height" name="height" class="form-control" required/>
             </div>
             <div class="form-group">
               <label>Peso:</label>
               <input type="text" id="weight" name="weight" class="form-control" required/>
-            </div>
+            </div-->
             <div class="form-group">
               <label>Usuario:</label>
               <input type="text" id="user" name="user" class="form-control" required/>
@@ -93,9 +93,9 @@
               pass:$("#pass").val(),
               name:$("#name").val(),
               age:$("#age").val(),
-              gender:$("#gender").val(),
-              height:$("#height").val(),
-              weight:$("#weight").val()
+              gender:$("#gender").val()
+              //height:$("#height").val(),
+              //weight:$("#weight").val()
             }),
             error:function(xhr,status,error){
               //console.log(xhr.responseJSON.message);

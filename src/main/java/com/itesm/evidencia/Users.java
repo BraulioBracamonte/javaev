@@ -13,20 +13,20 @@ public class Users implements Serializable {
   private String user;
   private String pass;
   private String name;
-  private Float height;
-  private Float weight;
+  //private Float height;
+  //private Float weight;
   private Integer age;
   private String gender;
   
   public Users(){}
 
-  public Users(Integer id, String user, String pass, String name, Float height, Float weight, Integer age, String gender){
+  public Users(Integer id, String user, String pass, String name, Integer age, String gender){
     this.id = id;
     this.user = user;
     this.pass = pass;
     this.name = name;
-    this.height = height;
-    this.weight = weight;
+    //this.height = height;
+    //this.weight = weight;
     this.age = age;
     this.gender = gender;
   }
@@ -66,7 +66,7 @@ public class Users implements Serializable {
     this.name = name;
   }
 
-  public Float getHeight() {
+  /*public Float getHeight() {
     return height;
   }
 
@@ -80,7 +80,7 @@ public class Users implements Serializable {
 
   public void setWeight(Float weight) {
     this.weight = weight;
-  }
+  }//*/
 
   public Integer getAge() {
     return age;
